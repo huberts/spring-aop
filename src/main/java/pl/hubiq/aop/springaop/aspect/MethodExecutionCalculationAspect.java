@@ -14,7 +14,7 @@ public class MethodExecutionCalculationAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Around("execution(* pl.hubiq.aop.springaop.business.*.*(..))")
+    @Around("pl.hubiq.aop.springaop.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         long startTime = System.currentTimeMillis();
         Object result = proceedingJoinPoint.proceed();

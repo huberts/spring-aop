@@ -14,7 +14,7 @@ public class UserAccessAspect { // <- Aspect: whole class
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Before("execution(* pl.hubiq.aop.springaop.data.*.*(..))")  // <- Pointcut: list of methods in scope of the aspect
+    @Before("pl.hubiq.aop.springaop.aspect.CommonJoinPointConfig.dataLayerExecution()")  // <- Pointcut: list of methods in scope of the aspect
     public void before(JoinPoint joinPoint) { // <- Join point: actual method executed
         logger.info("Check for user access"); // <- Advice: actual code of the aspect
         logger.info("Allowed axecution for {}", joinPoint);
