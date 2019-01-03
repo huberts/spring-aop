@@ -19,4 +19,7 @@ public class CommonJoinPointConfig {
 
     @Pointcut("within(pl.hubiq.aop.springaop.data..*)")
     public void dataLayersExecutionWithWithin() {}
+
+    @Pointcut("@annotation(pl.hubiq.aop.springaop.aspect.TrackTime)")
+    public void trackTimeAnnotation() {}
 }
